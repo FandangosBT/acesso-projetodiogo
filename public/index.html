@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#000000" />
+    <title>Instruções de Acessibilidade</title>
+    <meta name="description" content="Vídeo breve com instruções de acessibilidade para surdos. Autoplay em mudo, toque para som e tela cheia." />
+    <link rel="preload" as="image" href="/assets/poster.svg" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main id="app" class="app" aria-label="Página de vídeo com instruções de acessibilidade">
+      <div class="video-container">
+        <video id="video" class="video" playsinline muted autoplay loop preload="auto" poster="/assets/poster.svg" aria-label="Vídeo com instruções de acessibilidade">
+          <source src="/video/instrucoes.mp4" type="video/mp4" />
+          Seu navegador não suporta o elemento de vídeo.
+        </video>
+
+        <button id="cta" class="cta" aria-label="Ativar som e entrar em tela cheia">
+          <svg class="icon" aria-hidden="true"><use href="./icons.svg#volume"></use></svg>
+          <span>Toque para ativar som e tela cheia</span>
+          <svg class="icon" aria-hidden="true"><use href="./icons.svg#fullscreen"></use></svg>
+        </button>
+
+        <div id="loader" class="loader" role="status" aria-live="polite">
+          <span class="sr-only">Carregando vídeo…</span>
+        </div>
+        <div id="sr-status" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+        <div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" hidden>
+          <div class="toast-content">
+            <svg class="icon" aria-hidden="true"><use href="./icons.svg#warning"></use></svg>
+            <span id="toast-message">Não foi possível carregar o vídeo.</span>
+          </div>
+          <button id="retry" class="retry" aria-label="Tentar novamente">
+            <svg class="icon" aria-hidden="true"><use href="./icons.svg#refresh"></use></svg>
+            Recarregar
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <script src="/app.js" defer></script>
+  </body>
+</html>
