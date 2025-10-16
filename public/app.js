@@ -69,7 +69,7 @@
   function onError() {
     hide(loader);
     cta.style.display = 'inline-flex';
-    toastMessage.textContent = 'Não foi possível carregar o vídeo. Verifique a conexão ou envie o arquivo em /video/instrucoes.mp4';
+    toastMessage.textContent = 'Não foi possível carregar o vídeo. Verifique a conexão ou envie o arquivo em /assets/projeto-diogo.mov';
     show(toast);
     updateStatus('Erro ao carregar o vídeo.');
   }
